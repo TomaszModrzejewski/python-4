@@ -66,7 +66,7 @@ class AppsV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.create_namespaced_controller_revision_with_http_info(namespace, body, **kwargs)  # noqa: E501
 
-    def create_namespaced_controller_revision_with_http_info(self, namespace, body, **kwargs):  # noqa: E501
+    def create_namespaced_controller_revision_with_http_info(self, namespace, body, **kwargs):    # noqa: E501
         """create_namespaced_controller_revision  # noqa: E501
 
         create a ControllerRevision  # noqa: E501
@@ -104,16 +104,12 @@ class AppsV1Api(object):
             'pretty',
             'dry_run',
             'field_manager',
-            'field_validation'
+            'field_validation',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -148,17 +144,19 @@ class AppsV1Api(object):
         if 'field_validation' in local_var_params and local_var_params['field_validation'] is not None:  # noqa: E501
             query_params.append(('fieldValidation', local_var_params['field_validation']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -209,7 +207,7 @@ class AppsV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.create_namespaced_daemon_set_with_http_info(namespace, body, **kwargs)  # noqa: E501
 
-    def create_namespaced_daemon_set_with_http_info(self, namespace, body, **kwargs):  # noqa: E501
+    def create_namespaced_daemon_set_with_http_info(self, namespace, body, **kwargs):    # noqa: E501
         """create_namespaced_daemon_set  # noqa: E501
 
         create a DaemonSet  # noqa: E501
@@ -247,16 +245,12 @@ class AppsV1Api(object):
             'pretty',
             'dry_run',
             'field_manager',
-            'field_validation'
+            'field_validation',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -291,17 +285,19 @@ class AppsV1Api(object):
         if 'field_validation' in local_var_params and local_var_params['field_validation'] is not None:  # noqa: E501
             query_params.append(('fieldValidation', local_var_params['field_validation']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -352,7 +348,7 @@ class AppsV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.create_namespaced_deployment_with_http_info(namespace, body, **kwargs)  # noqa: E501
 
-    def create_namespaced_deployment_with_http_info(self, namespace, body, **kwargs):  # noqa: E501
+    def create_namespaced_deployment_with_http_info(self, namespace, body, **kwargs):    # noqa: E501
         """create_namespaced_deployment  # noqa: E501
 
         create a Deployment  # noqa: E501
@@ -390,16 +386,12 @@ class AppsV1Api(object):
             'pretty',
             'dry_run',
             'field_manager',
-            'field_validation'
+            'field_validation',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -434,17 +426,19 @@ class AppsV1Api(object):
         if 'field_validation' in local_var_params and local_var_params['field_validation'] is not None:  # noqa: E501
             query_params.append(('fieldValidation', local_var_params['field_validation']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -495,7 +489,7 @@ class AppsV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.create_namespaced_replica_set_with_http_info(namespace, body, **kwargs)  # noqa: E501
 
-    def create_namespaced_replica_set_with_http_info(self, namespace, body, **kwargs):  # noqa: E501
+    def create_namespaced_replica_set_with_http_info(self, namespace, body, **kwargs):    # noqa: E501
         """create_namespaced_replica_set  # noqa: E501
 
         create a ReplicaSet  # noqa: E501
@@ -533,16 +527,12 @@ class AppsV1Api(object):
             'pretty',
             'dry_run',
             'field_manager',
-            'field_validation'
+            'field_validation',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -577,17 +567,19 @@ class AppsV1Api(object):
         if 'field_validation' in local_var_params and local_var_params['field_validation'] is not None:  # noqa: E501
             query_params.append(('fieldValidation', local_var_params['field_validation']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -638,7 +630,7 @@ class AppsV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.create_namespaced_stateful_set_with_http_info(namespace, body, **kwargs)  # noqa: E501
 
-    def create_namespaced_stateful_set_with_http_info(self, namespace, body, **kwargs):  # noqa: E501
+    def create_namespaced_stateful_set_with_http_info(self, namespace, body, **kwargs):    # noqa: E501
         """create_namespaced_stateful_set  # noqa: E501
 
         create a StatefulSet  # noqa: E501
@@ -676,16 +668,12 @@ class AppsV1Api(object):
             'pretty',
             'dry_run',
             'field_manager',
-            'field_validation'
+            'field_validation',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -720,17 +708,19 @@ class AppsV1Api(object):
         if 'field_validation' in local_var_params and local_var_params['field_validation'] is not None:  # noqa: E501
             query_params.append(('fieldValidation', local_var_params['field_validation']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -789,7 +779,7 @@ class AppsV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_collection_namespaced_controller_revision_with_http_info(namespace, **kwargs)  # noqa: E501
 
-    def delete_collection_namespaced_controller_revision_with_http_info(self, namespace, **kwargs):  # noqa: E501
+    def delete_collection_namespaced_controller_revision_with_http_info(self, namespace, **kwargs):    # noqa: E501
         """delete_collection_namespaced_controller_revision  # noqa: E501
 
         delete collection of ControllerRevision  # noqa: E501
@@ -843,16 +833,12 @@ class AppsV1Api(object):
             'resource_version',
             'resource_version_match',
             'timeout_seconds',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -899,17 +885,19 @@ class AppsV1Api(object):
         if 'timeout_seconds' in local_var_params and local_var_params['timeout_seconds'] is not None:  # noqa: E501
             query_params.append(('timeoutSeconds', local_var_params['timeout_seconds']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -968,7 +956,7 @@ class AppsV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_collection_namespaced_daemon_set_with_http_info(namespace, **kwargs)  # noqa: E501
 
-    def delete_collection_namespaced_daemon_set_with_http_info(self, namespace, **kwargs):  # noqa: E501
+    def delete_collection_namespaced_daemon_set_with_http_info(self, namespace, **kwargs):    # noqa: E501
         """delete_collection_namespaced_daemon_set  # noqa: E501
 
         delete collection of DaemonSet  # noqa: E501
@@ -1022,16 +1010,12 @@ class AppsV1Api(object):
             'resource_version',
             'resource_version_match',
             'timeout_seconds',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1078,17 +1062,19 @@ class AppsV1Api(object):
         if 'timeout_seconds' in local_var_params and local_var_params['timeout_seconds'] is not None:  # noqa: E501
             query_params.append(('timeoutSeconds', local_var_params['timeout_seconds']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -1147,7 +1133,7 @@ class AppsV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_collection_namespaced_deployment_with_http_info(namespace, **kwargs)  # noqa: E501
 
-    def delete_collection_namespaced_deployment_with_http_info(self, namespace, **kwargs):  # noqa: E501
+    def delete_collection_namespaced_deployment_with_http_info(self, namespace, **kwargs):    # noqa: E501
         """delete_collection_namespaced_deployment  # noqa: E501
 
         delete collection of Deployment  # noqa: E501
@@ -1201,16 +1187,12 @@ class AppsV1Api(object):
             'resource_version',
             'resource_version_match',
             'timeout_seconds',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1257,17 +1239,19 @@ class AppsV1Api(object):
         if 'timeout_seconds' in local_var_params and local_var_params['timeout_seconds'] is not None:  # noqa: E501
             query_params.append(('timeoutSeconds', local_var_params['timeout_seconds']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501

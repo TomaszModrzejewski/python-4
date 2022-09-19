@@ -65,7 +65,7 @@ class AuthenticationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.create_token_review_with_http_info(body, **kwargs)  # noqa: E501
 
-    def create_token_review_with_http_info(self, body, **kwargs):  # noqa: E501
+    def create_token_review_with_http_info(self, body, **kwargs):    # noqa: E501
         """create_token_review  # noqa: E501
 
         create a TokenReview  # noqa: E501
@@ -101,16 +101,12 @@ class AuthenticationV1Api(object):
             'dry_run',
             'field_manager',
             'field_validation',
-            'pretty'
+            'pretty',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -139,17 +135,19 @@ class AuthenticationV1Api(object):
         if 'pretty' in local_var_params and local_var_params['pretty'] is not None:  # noqa: E501
             query_params.append(('pretty', local_var_params['pretty']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -194,7 +192,7 @@ class AuthenticationV1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.get_api_resources_with_http_info(**kwargs)  # noqa: E501
 
-    def get_api_resources_with_http_info(self, **kwargs):  # noqa: E501
+    def get_api_resources_with_http_info(self, **kwargs):    # noqa: E501
         """get_api_resources  # noqa: E501
 
         get available resources  # noqa: E501
@@ -221,15 +219,11 @@ class AuthenticationV1Api(object):
         local_var_params = locals()
 
         all_params = [
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -246,15 +240,19 @@ class AuthenticationV1Api(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501

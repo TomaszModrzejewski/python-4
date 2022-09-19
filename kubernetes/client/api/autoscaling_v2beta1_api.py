@@ -66,7 +66,7 @@ class AutoscalingV2beta1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.create_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, body, **kwargs)  # noqa: E501
 
-    def create_namespaced_horizontal_pod_autoscaler_with_http_info(self, namespace, body, **kwargs):  # noqa: E501
+    def create_namespaced_horizontal_pod_autoscaler_with_http_info(self, namespace, body, **kwargs):    # noqa: E501
         """create_namespaced_horizontal_pod_autoscaler  # noqa: E501
 
         create a HorizontalPodAutoscaler  # noqa: E501
@@ -104,16 +104,12 @@ class AutoscalingV2beta1Api(object):
             'pretty',
             'dry_run',
             'field_manager',
-            'field_validation'
+            'field_validation',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -148,17 +144,19 @@ class AutoscalingV2beta1Api(object):
         if 'field_validation' in local_var_params and local_var_params['field_validation'] is not None:  # noqa: E501
             query_params.append(('fieldValidation', local_var_params['field_validation']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -217,7 +215,7 @@ class AutoscalingV2beta1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_collection_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, **kwargs)  # noqa: E501
 
-    def delete_collection_namespaced_horizontal_pod_autoscaler_with_http_info(self, namespace, **kwargs):  # noqa: E501
+    def delete_collection_namespaced_horizontal_pod_autoscaler_with_http_info(self, namespace, **kwargs):    # noqa: E501
         """delete_collection_namespaced_horizontal_pod_autoscaler  # noqa: E501
 
         delete collection of HorizontalPodAutoscaler  # noqa: E501
@@ -271,16 +269,12 @@ class AutoscalingV2beta1Api(object):
             'resource_version',
             'resource_version_match',
             'timeout_seconds',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -327,17 +321,19 @@ class AutoscalingV2beta1Api(object):
         if 'timeout_seconds' in local_var_params and local_var_params['timeout_seconds'] is not None:  # noqa: E501
             query_params.append(('timeoutSeconds', local_var_params['timeout_seconds']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -390,7 +386,7 @@ class AutoscalingV2beta1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.delete_namespaced_horizontal_pod_autoscaler_with_http_info(name, namespace, **kwargs)  # noqa: E501
 
-    def delete_namespaced_horizontal_pod_autoscaler_with_http_info(self, name, namespace, **kwargs):  # noqa: E501
+    def delete_namespaced_horizontal_pod_autoscaler_with_http_info(self, name, namespace, **kwargs):    # noqa: E501
         """delete_namespaced_horizontal_pod_autoscaler  # noqa: E501
 
         delete a HorizontalPodAutoscaler  # noqa: E501
@@ -432,16 +428,12 @@ class AutoscalingV2beta1Api(object):
             'grace_period_seconds',
             'orphan_dependents',
             'propagation_policy',
-            'body'
+            'body',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -480,17 +472,19 @@ class AutoscalingV2beta1Api(object):
         if 'propagation_policy' in local_var_params and local_var_params['propagation_policy'] is not None:  # noqa: E501
             query_params.append(('propagationPolicy', local_var_params['propagation_policy']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -535,7 +529,7 @@ class AutoscalingV2beta1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.get_api_resources_with_http_info(**kwargs)  # noqa: E501
 
-    def get_api_resources_with_http_info(self, **kwargs):  # noqa: E501
+    def get_api_resources_with_http_info(self, **kwargs):    # noqa: E501
         """get_api_resources  # noqa: E501
 
         get available resources  # noqa: E501
@@ -562,15 +556,11 @@ class AutoscalingV2beta1Api(object):
         local_var_params = locals()
 
         all_params = [
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -587,15 +577,19 @@ class AutoscalingV2beta1Api(object):
 
         query_params = []
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -650,7 +644,7 @@ class AutoscalingV2beta1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.list_horizontal_pod_autoscaler_for_all_namespaces_with_http_info(**kwargs)  # noqa: E501
 
-    def list_horizontal_pod_autoscaler_for_all_namespaces_with_http_info(self, **kwargs):  # noqa: E501
+    def list_horizontal_pod_autoscaler_for_all_namespaces_with_http_info(self, **kwargs):    # noqa: E501
         """list_horizontal_pod_autoscaler_for_all_namespaces  # noqa: E501
 
         list or watch objects of kind HorizontalPodAutoscaler  # noqa: E501
@@ -696,16 +690,12 @@ class AutoscalingV2beta1Api(object):
             'resource_version',
             'resource_version_match',
             'timeout_seconds',
-            'watch'
+            'watch',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -742,15 +732,21 @@ class AutoscalingV2beta1Api(object):
         if 'watch' in local_var_params and local_var_params['watch'] is not None:  # noqa: E501
             query_params.append(('watch', local_var_params['watch']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf;stream=watch'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                    'application/json;stream=watch',
+                    'application/vnd.kubernetes.protobuf;stream=watch',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -806,7 +802,7 @@ class AutoscalingV2beta1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.list_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, **kwargs)  # noqa: E501
 
-    def list_namespaced_horizontal_pod_autoscaler_with_http_info(self, namespace, **kwargs):  # noqa: E501
+    def list_namespaced_horizontal_pod_autoscaler_with_http_info(self, namespace, **kwargs):    # noqa: E501
         """list_namespaced_horizontal_pod_autoscaler  # noqa: E501
 
         list or watch objects of kind HorizontalPodAutoscaler  # noqa: E501
@@ -854,16 +850,12 @@ class AutoscalingV2beta1Api(object):
             'resource_version',
             'resource_version_match',
             'timeout_seconds',
-            'watch'
+            'watch',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -906,15 +898,21 @@ class AutoscalingV2beta1Api(object):
         if 'watch' in local_var_params and local_var_params['watch'] is not None:  # noqa: E501
             query_params.append(('watch', local_var_params['watch']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf', 'application/json;stream=watch', 'application/vnd.kubernetes.protobuf;stream=watch'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                    'application/json;stream=watch',
+                    'application/vnd.kubernetes.protobuf;stream=watch',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
@@ -967,7 +965,7 @@ class AutoscalingV2beta1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.patch_namespaced_horizontal_pod_autoscaler_with_http_info(name, namespace, body, **kwargs)  # noqa: E501
 
-    def patch_namespaced_horizontal_pod_autoscaler_with_http_info(self, name, namespace, body, **kwargs):  # noqa: E501
+    def patch_namespaced_horizontal_pod_autoscaler_with_http_info(self, name, namespace, body, **kwargs):    # noqa: E501
         """patch_namespaced_horizontal_pod_autoscaler  # noqa: E501
 
         partially update the specified HorizontalPodAutoscaler  # noqa: E501
@@ -1009,16 +1007,12 @@ class AutoscalingV2beta1Api(object):
             'dry_run',
             'field_manager',
             'field_validation',
-            'force'
+            'force',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1061,17 +1055,19 @@ class AutoscalingV2beta1Api(object):
         if 'force' in local_var_params and local_var_params['force'] is not None:  # noqa: E501
             query_params.append(('force', local_var_params['force']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -1128,7 +1124,7 @@ class AutoscalingV2beta1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(name, namespace, body, **kwargs)  # noqa: E501
 
-    def patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(self, name, namespace, body, **kwargs):  # noqa: E501
+    def patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(self, name, namespace, body, **kwargs):    # noqa: E501
         """patch_namespaced_horizontal_pod_autoscaler_status  # noqa: E501
 
         partially update status of the specified HorizontalPodAutoscaler  # noqa: E501
@@ -1170,16 +1166,12 @@ class AutoscalingV2beta1Api(object):
             'dry_run',
             'field_manager',
             'field_validation',
-            'force'
+            'force',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1222,17 +1214,19 @@ class AutoscalingV2beta1Api(object):
         if 'force' in local_var_params and local_var_params['force'] is not None:  # noqa: E501
             query_params.append(('force', local_var_params['force']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        body_params = local_var_params.get('body')
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
@@ -1284,7 +1278,7 @@ class AutoscalingV2beta1Api(object):
         kwargs['_return_http_data_only'] = True
         return self.read_namespaced_horizontal_pod_autoscaler_with_http_info(name, namespace, **kwargs)  # noqa: E501
 
-    def read_namespaced_horizontal_pod_autoscaler_with_http_info(self, name, namespace, **kwargs):  # noqa: E501
+    def read_namespaced_horizontal_pod_autoscaler_with_http_info(self, name, namespace, **kwargs):    # noqa: E501
         """read_namespaced_horizontal_pod_autoscaler  # noqa: E501
 
         read the specified HorizontalPodAutoscaler  # noqa: E501
@@ -1316,16 +1310,12 @@ class AutoscalingV2beta1Api(object):
         all_params = [
             'name',
             'namespace',
-            'pretty'
+            'pretty',
+            'async_req',
+            '_return_http_data_only',
+            '_preload_content',
+            '_request_timeout',
         ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1356,15 +1346,19 @@ class AutoscalingV2beta1Api(object):
         if 'pretty' in local_var_params and local_var_params['pretty'] is not None:  # noqa: E501
             query_params.append(('pretty', local_var_params['pretty']))  # noqa: E501
 
-        header_params = {}
-
         form_params = []
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])  # noqa: E501
+        header_params = {
+            'Accept': self.api_client.select_header_accept(
+                [
+                    'application/json',
+                    'application/yaml',
+                    'application/vnd.kubernetes.protobuf',
+                ]
+            )
+        }
 
         # Authentication setting
         auth_settings = ['BearerToken']  # noqa: E501
